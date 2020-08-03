@@ -1,0 +1,6 @@
+framework module Pods_JejuECS {
+  umbrella header "Pods-JejuECS-umbrella.h"
+
+  export *
+  module * { export * }
+}

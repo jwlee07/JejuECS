@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>12287543707-8i9tslprfbjrjuak05uor6f653dfvss4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.12287543707-8i9tslprfbjrjuak05uor6f653dfvss4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBxU3bpEWm-J6y2kpzUq2RnMwNvPS-IdvY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>12287543707</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.JejuECS</string>
+	<key>PROJECT_ID</key>
+	<string>jejuecs</string>
+	<key>STORAGE_BUCKET</key>
+	<string>jejuecs.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:12287543707:ios:96e7fc8525ece15f43793e</string>
+	<key>DATABASE_URL</key>
+	<string>https://jejuecs.firebaseio.com</string>
+</dict>
+</plist>
