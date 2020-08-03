@@ -19,5 +19,3 @@
 - FireBase/Analitics
 - SnapKit
 - MapKit
-- KaKao Map
-- Naver Map
