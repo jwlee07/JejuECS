@@ -1,6 +1,3 @@
-# JejuECS
-ElectricChargingStation in Jeju🍀
-
 # 팀명.
 
 - 지미인과 95's
