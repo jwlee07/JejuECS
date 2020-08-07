@@ -11,6 +11,9 @@
 		4951AF3524D842C700CA8F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3424D842C700CA8F76 /* Assets.xcassets */; };
 		4951AF3824D842C700CA8F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3624D842C700CA8F76 /* LaunchScreen.storyboard */; };
 		4957E7D024D8457F00E20A20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */; };
+		49FBE4D824DD362B002B841F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBE4D724DD362B002B841F /* LoginViewController.swift */; };
+		49FBE4DB24DD3644002B841F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBE4DA24DD3644002B841F /* LoginView.swift */; };
+		49FBE4E024DD3A04002B841F /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBE4DF24DD3A04002B841F /* LoginData.swift */; };
 		A3AE9D5886D4AAB4F7D4BDC8 /* Pods_JejuECS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0E018ECD6BA6713B724463E /* Pods_JejuECS.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +25,10 @@
 		4951AF3724D842C700CA8F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4951AF3924D842C700CA8F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49FBE4D724DD362B002B841F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		49FBE4DA24DD3644002B841F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		49FBE4DF24DD3A04002B841F /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		49FBE4E324DD84DA002B841F /* JejuECS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JejuECS.entitlements; sourceTree = "<group>"; };
 		A0E018ECD6BA6713B724463E /* Pods_JejuECS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JejuECS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA031725F5F5BCAF22F6303 /* Pods-JejuECS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuECS.debug.xcconfig"; path = "Target Support Files/Pods-JejuECS/Pods-JejuECS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +48,7 @@
 		490343ED24DD20D8002FE48C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				49FBE4D624DD35F2002B841F /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -48,6 +56,7 @@
 		490343EE24DD210D002FE48C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49FBE4D924DD3630002B841F /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -55,6 +64,7 @@
 		490343EF24DD2112002FE48C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49FBE4DE24DD39F3002B841F /* Login */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -63,8 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				4951AF2A24D842C600CA8F76 /* JejuECS */,
-				4951AF3924D842C700CA8F76 /* Info.plist */,
-				4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */,
 				4951AF2924D842C600CA8F76 /* Products */,
 				5635DE4591514E43315298DF /* Pods */,
 				F2B635807DD6D37998F50064 /* Frameworks */,
@@ -82,6 +90,9 @@
 		4951AF2A24D842C600CA8F76 /* JejuECS */ = {
 			isa = PBXGroup;
 			children = (
+				49FBE4E324DD84DA002B841F /* JejuECS.entitlements */,
+				4951AF3924D842C700CA8F76 /* Info.plist */,
+				4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */,
 				490343EF24DD2112002FE48C /* Model */,
 				490343EE24DD210D002FE48C /* View */,
 				490343ED24DD20D8002FE48C /* Controller */,
@@ -98,6 +109,30 @@
 				4951AF3424D842C700CA8F76 /* Assets.xcassets */,
 			);
 			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		49FBE4D624DD35F2002B841F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49FBE4D724DD362B002B841F /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		49FBE4D924DD3630002B841F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49FBE4DA24DD3644002B841F /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		49FBE4DE24DD39F3002B841F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49FBE4DF24DD3A04002B841F /* LoginData.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		5635DE4591514E43315298DF /* Pods */ = {
@@ -129,6 +164,7 @@
 				4951AF2524D842C600CA8F76 /* Frameworks */,
 				4951AF2624D842C600CA8F76 /* Resources */,
 				473F1C806EF9B5C0788970F7 /* [CP] Embed Pods Frameworks */,
+				73C5C1B3114C7E670F5F537B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +239,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JejuECS/Pods-JejuECS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		73C5C1B3114C7E670F5F537B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JejuECS/Pods-JejuECS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JejuECS/Pods-JejuECS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JejuECS/Pods-JejuECS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C6B010D408CA6AA3E3AC0795 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FBE4DB24DD3644002B841F /* LoginView.swift in Sources */,
+				49FBE4E024DD3A04002B841F /* LoginData.swift in Sources */,
+				49FBE4D824DD362B002B841F /* LoginViewController.swift in Sources */,
 				4951AF2C24D842C600CA8F76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,8 +425,9 @@
 			baseConfigurationReference = DCA031725F5F5BCAF22F6303 /* Pods-JejuECS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JejuECS/JejuECS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25WA95NQNW;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JejuECS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,8 +446,9 @@
 			baseConfigurationReference = 48B7341284518C50CAF9D67D /* Pods-JejuECS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JejuECS/JejuECS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25WA95NQNW;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JejuECS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
