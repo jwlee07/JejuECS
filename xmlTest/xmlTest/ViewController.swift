@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  JejuECS
+//  xmlTest
 //
-//  Created by 이진욱 on 2020/08/03.
+//  Created by 이진욱 on 2020/08/05.
 //  Copyright © 2020 jwlee. All rights reserved.
 //
 
@@ -12,7 +12,9 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemRed
+    // Do any additional setup after loading the view.
   }
+
+
 }
 

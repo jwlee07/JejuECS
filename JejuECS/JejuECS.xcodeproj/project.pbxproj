@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4951AF2C24D842C600CA8F76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AF2B24D842C600CA8F76 /* AppDelegate.swift */; };
-		4951AF3024D842C600CA8F76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AF2F24D842C600CA8F76 /* ViewController.swift */; };
 		4951AF3524D842C700CA8F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3424D842C700CA8F76 /* Assets.xcassets */; };
 		4951AF3824D842C700CA8F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3624D842C700CA8F76 /* LaunchScreen.storyboard */; };
 		4957E7D024D8457F00E20A20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */; };
@@ -19,7 +18,6 @@
 		48B7341284518C50CAF9D67D /* Pods-JejuECS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuECS.release.xcconfig"; path = "Target Support Files/Pods-JejuECS/Pods-JejuECS.release.xcconfig"; sourceTree = "<group>"; };
 		4951AF2824D842C600CA8F76 /* JejuECS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuECS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4951AF2B24D842C600CA8F76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4951AF2F24D842C600CA8F76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4951AF3424D842C700CA8F76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4951AF3724D842C700CA8F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4951AF3924D842C700CA8F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,10 +38,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490343ED24DD20D8002FE48C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		490343EE24DD210D002FE48C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		490343EF24DD2112002FE48C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4951AF1F24D842C600CA8F76 = {
 			isa = PBXGroup;
 			children = (
 				4951AF2A24D842C600CA8F76 /* JejuECS */,
+				4951AF3924D842C700CA8F76 /* Info.plist */,
+				4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */,
 				4951AF2924D842C600CA8F76 /* Products */,
 				5635DE4591514E43315298DF /* Pods */,
 				F2B635807DD6D37998F50064 /* Frameworks */,
@@ -61,11 +82,10 @@
 		4951AF2A24D842C600CA8F76 /* JejuECS */ = {
 			isa = PBXGroup;
 			children = (
-				4951AF3924D842C700CA8F76 /* Info.plist */,
-				4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */,
+				490343EF24DD2112002FE48C /* Model */,
+				490343EE24DD210D002FE48C /* View */,
+				490343ED24DD20D8002FE48C /* Controller */,
 				4957E7D124D8459500E20A20 /* SupportFile */,
-				4951AF2F24D842C600CA8F76 /* ViewController.swift */,
-				4951AF3624D842C700CA8F76 /* LaunchScreen.storyboard */,
 			);
 			path = JejuECS;
 			sourceTree = "<group>";
@@ -73,6 +93,7 @@
 		4957E7D124D8459500E20A20 /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
+				4951AF3624D842C700CA8F76 /* LaunchScreen.storyboard */,
 				4951AF2B24D842C600CA8F76 /* AppDelegate.swift */,
 				4951AF3424D842C700CA8F76 /* Assets.xcassets */,
 			);
@@ -211,7 +232,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4951AF3024D842C600CA8F76 /* ViewController.swift in Sources */,
 				4951AF2C24D842C600CA8F76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
