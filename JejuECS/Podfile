@@ -6,7 +6,11 @@ target 'JejuECS' do
   use_frameworks!
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Alamofire'
+  pod 'SwiftyXMLParser'
   pod 'GoogleSignIn'
+  pod 'naveridlogin-sdk-ios'
   pod 'SnapKit'
   # Pods for JejuECS
 
