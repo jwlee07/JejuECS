@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FACC99E24DE985700DD7708 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACC99D24DE985700DD7708 /* SearchViewController.swift */; };
+		0FACC9A024DE9F9600DD7708 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */; };
+		0FDA124924DD35BC004B7D4B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA124824DD35BC004B7D4B /* HomeViewController.swift */; };
+		0FDA124D24DD37CC004B7D4B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA124C24DD37CC004B7D4B /* MainTabBarController.swift */; };
+		0FDA125124DD38E5004B7D4B /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA125024DD38E5004B7D4B /* GuideViewController.swift */; };
+		0FDA125324DD38F6004B7D4B /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDA125224DD38F6004B7D4B /* MyPageViewController.swift */; };
 		4951AF2C24D842C600CA8F76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4951AF2B24D842C600CA8F76 /* AppDelegate.swift */; };
 		4951AF3524D842C700CA8F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3424D842C700CA8F76 /* Assets.xcassets */; };
 		4951AF3824D842C700CA8F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3624D842C700CA8F76 /* LaunchScreen.storyboard */; };
@@ -15,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FACC99D24DE985700DD7708 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingButton.swift; path = JejuECS/Controller/Search/FloatingButton.swift; sourceTree = SOURCE_ROOT; };
+		0FDA124824DD35BC004B7D4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = JejuECS/Controller/Home/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		0FDA124C24DD37CC004B7D4B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		0FDA125024DD38E5004B7D4B /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		0FDA125224DD38F6004B7D4B /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		48B7341284518C50CAF9D67D /* Pods-JejuECS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JejuECS.release.xcconfig"; path = "Target Support Files/Pods-JejuECS/Pods-JejuECS.release.xcconfig"; sourceTree = "<group>"; };
 		4951AF2824D842C600CA8F76 /* JejuECS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JejuECS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4951AF2B24D842C600CA8F76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,9 +50,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FACC99C24DE984200DD7708 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				0FACC99D24DE985700DD7708 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0FDA124A24DD3620004B7D4B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA124824DD35BC004B7D4B /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0FDA124B24DD37BB004B7D4B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA124C24DD37CC004B7D4B /* MainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		0FDA124E24DD38AF004B7D4B /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA125024DD38E5004B7D4B /* GuideViewController.swift */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		0FDA124F24DD38CD004B7D4B /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				0FDA125224DD38F6004B7D4B /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		490343ED24DD20D8002FE48C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0FDA124B24DD37BB004B7D4B /* Main */,
+				0FDA124A24DD3620004B7D4B /* Home */,
+				0FACC99C24DE984200DD7708 /* Search */,
+				0FDA124E24DD38AF004B7D4B /* Guide */,
+				0FDA124F24DD38CD004B7D4B /* MyPage */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -48,6 +105,7 @@
 		490343EE24DD210D002FE48C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -63,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				4951AF2A24D842C600CA8F76 /* JejuECS */,
-				4951AF3924D842C700CA8F76 /* Info.plist */,
-				4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */,
 				4951AF2924D842C600CA8F76 /* Products */,
 				5635DE4591514E43315298DF /* Pods */,
 				F2B635807DD6D37998F50064 /* Frameworks */,
@@ -82,6 +138,8 @@
 		4951AF2A24D842C600CA8F76 /* JejuECS */ = {
 			isa = PBXGroup;
 			children = (
+				4951AF3924D842C700CA8F76 /* Info.plist */,
+				4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */,
 				490343EF24DD2112002FE48C /* Model */,
 				490343EE24DD210D002FE48C /* View */,
 				490343ED24DD20D8002FE48C /* Controller */,
@@ -232,7 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FACC99E24DE985700DD7708 /* SearchViewController.swift in Sources */,
+				0FDA125324DD38F6004B7D4B /* MyPageViewController.swift in Sources */,
+				0FACC9A024DE9F9600DD7708 /* FloatingButton.swift in Sources */,
 				4951AF2C24D842C600CA8F76 /* AppDelegate.swift in Sources */,
+				0FDA125124DD38E5004B7D4B /* GuideViewController.swift in Sources */,
+				0FDA124924DD35BC004B7D4B /* HomeViewController.swift in Sources */,
+				0FDA124D24DD37CC004B7D4B /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
