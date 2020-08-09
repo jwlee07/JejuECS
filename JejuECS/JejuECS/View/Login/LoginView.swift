@@ -23,6 +23,7 @@ class LoginView: UIView {
     let tf = UITextField()
     tf.borderStyle = .none
     tf.placeholder = "비밀번호"
+    tf.isSecureTextEntry = true
     return tf
   }()
   

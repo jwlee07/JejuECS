@@ -33,6 +33,24 @@ class LoginViewController: UIViewController {
     return btn
   }()
   
+  private let signUpView = UIView()
+  
+  private let signUpLabel: UILabel = {
+    let lb = UILabel()
+    lb.text = "혹시, 제주ECS가 처음이신가요? "
+    lb.textColor = .systemGray
+    lb.font = UIFont(name: "AppleSDGothicNeo-regular", size: 20)
+    return lb
+  }()
+  
+  private let signUpButton: UIButton = {
+    let btn = UIButton()
+    btn.setTitle("회원가입", for: .normal)
+    btn.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+    btn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
+    return btn
+  }()
+  
   // MARK: - LifeCycle
   
   override func viewDidLoad() {
@@ -44,12 +62,25 @@ class LoginViewController: UIViewController {
     setKakaoLoginButton()
     setNaverLoginButton()
   }
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
   
   // MARK: - Setup Layout
   
   private func setUI() {
-    [loginView, authorizationAppleIDButton, googleLoginButton, kakaoLoginButton, naverLoginButton].forEach {
+    [loginView,
+     authorizationAppleIDButton,
+     googleLoginButton,
+     kakaoLoginButton,
+     naverLoginButton,
+     signUpView].forEach {
       view.addSubview($0)
+    }
+    
+    [signUpLabel,
+     signUpButton].forEach {
+      signUpView.addSubview($0)
     }
   }
   
@@ -64,7 +95,15 @@ class LoginViewController: UIViewController {
     let snsPadding: CGFloat = 250
     let snsToSnsPadding: CGFloat = 8
     
-    [loginView, authorizationAppleIDButton, googleLoginButton, kakaoLoginButton, naverLoginButton].forEach {
+    let signUpViewHeight: CGFloat = 16
+    let signUpPadding: CGFloat = 20
+    let signUpMargin: CGFloat = 45
+    
+    [loginView,
+     authorizationAppleIDButton,
+     googleLoginButton,
+     kakaoLoginButton,
+     naverLoginButton].forEach {
       $0.snp.makeConstraints {
         $0.leading.equalTo(margin)
         $0.trailing.equalTo(-margin)
@@ -94,6 +133,23 @@ class LoginViewController: UIViewController {
     naverLoginButton.snp.makeConstraints {
       $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(snsToSnsPadding)
       $0.height.equalTo(snsloginViewHeight)
+    }
+    
+    signUpView.snp.makeConstraints {
+      $0.leading.equalTo(signUpMargin)
+      $0.trailing.equalTo(-signUpMargin)
+      $0.top.equalTo(naverLoginButton.snp.bottom).offset(signUpPadding)
+      $0.height.equalTo(signUpViewHeight)
+    }
+    
+    signUpLabel.snp.makeConstraints {
+      $0.leading.equalToSuperview()
+      $0.top.equalTo(signUpView.snp.top)
+    }
+    
+    signUpButton.snp.makeConstraints {
+      $0.leading.equalTo(signUpLabel.snp.trailing)
+      $0.centerY.equalTo(signUpLabel.snp.centerY)
     }
   }
   
