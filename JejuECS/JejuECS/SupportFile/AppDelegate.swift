@@ -46,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     instance?.appName = kServiceAppName
     
     window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = MainTabBarController()
     window?.makeKeyAndVisible()
     window?.rootViewController = LoginViewController()
     window?.backgroundColor = .systemBackground
