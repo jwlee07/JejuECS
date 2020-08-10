@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     instance?.appName = kServiceAppName
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = MainTabBarController()
     window?.makeKeyAndVisible()
     window?.rootViewController = LoginViewController()
     window?.backgroundColor = .systemBackground
@@ -86,17 +85,6 @@ extension AppDelegate: GIDSignInDelegate {
     }
     
     guard let authentication = user.authentication else { return }
-    let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                   accessToken: authentication.accessToken)
-    
-    Auth.auth().signIn(with: credential) { (authResult, error) in
-      if let error = error {
-        print ("Auth error.localizedDescription : ", error.localizedDescription)
-      } else {
-        print ("Login Success")
-      }
-    }
-    print ("didSignInFor credential.provider : ", credential.provider)
   }
 }
 
