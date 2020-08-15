@@ -16,6 +16,14 @@
 
 # 사용 라이브러리
 
-- FireBase/Analitics
-- SnapKit
 - MapKit
+- FireBase/Analitics
+- Firebase/Auth
+- Firebase/Firestore
+- SnapKit
+- Alamofire
+- SwiftyXMLParser
+- AuthenticationServices
+- GoogleSignIn
+- naveridlogin-sdk-ios
+- KakaoOpenSDK
