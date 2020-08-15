@@ -9,9 +9,9 @@ target 'JejuECS' do
   pod 'Firebase/Firestore'
   pod 'Alamofire'
   pod 'SwiftyXMLParser'
+  pod 'SnapKit'
   pod 'GoogleSignIn'
   pod 'naveridlogin-sdk-ios'
-  pod 'SnapKit'
   # Pods for JejuECS
 
 end

@@ -17,6 +17,11 @@
 		4951AF3524D842C700CA8F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3424D842C700CA8F76 /* Assets.xcassets */; };
 		4951AF3824D842C700CA8F76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4951AF3624D842C700CA8F76 /* LaunchScreen.storyboard */; };
 		4957E7D024D8457F00E20A20 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */; };
+		4987515A24DFE31A004EEA54 /* SnsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987515924DFE31A004EEA54 /* SnsButton.swift */; };
+		4987516024DFE76F004EEA54 /* google_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4987515C24DFE76E004EEA54 /* google_logo.png */; };
+		4987516124DFE76F004EEA54 /* kakao_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4987515D24DFE76F004EEA54 /* kakao_logo.png */; };
+		4987516224DFE76F004EEA54 /* apple_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4987515E24DFE76F004EEA54 /* apple_logo.png */; };
+		4987516324DFE76F004EEA54 /* naver_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4987515F24DFE76F004EEA54 /* naver_logo.png */; };
 		49DD0D5624DEBD7000ADF16C /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DD0D5524DEBD7000ADF16C /* KakaoOpenSDK.framework */; };
 		49FBE4D824DD362B002B841F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBE4D724DD362B002B841F /* LoginViewController.swift */; };
 		49FBE4DB24DD3644002B841F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBE4DA24DD3644002B841F /* LoginView.swift */; };
@@ -25,7 +30,7 @@
 
 /* Begin PBXFileReference section */
 		0FACC99D24DE985700DD7708 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingButton.swift; path = JejuECS/Controller/Search/FloatingButton.swift; sourceTree = SOURCE_ROOT; };
+		0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FloatingButton.swift; path = JejuECS/View/Home/FloatingButton.swift; sourceTree = SOURCE_ROOT; };
 		0FDA124824DD35BC004B7D4B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = JejuECS/Controller/Home/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		0FDA124C24DD37CC004B7D4B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		0FDA125024DD38E5004B7D4B /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +42,11 @@
 		4951AF3724D842C700CA8F76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4951AF3924D842C700CA8F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4957E7CF24D8457F00E20A20 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4987515924DFE31A004EEA54 /* SnsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnsButton.swift; sourceTree = "<group>"; };
+		4987515C24DFE76E004EEA54 /* google_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = google_logo.png; sourceTree = "<group>"; };
+		4987515D24DFE76F004EEA54 /* kakao_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kakao_logo.png; sourceTree = "<group>"; };
+		4987515E24DFE76F004EEA54 /* apple_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = apple_logo.png; sourceTree = "<group>"; };
+		4987515F24DFE76F004EEA54 /* naver_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = naver_logo.png; sourceTree = "<group>"; };
 		49DD0D5424DEBB3C00ADF16C /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		49DD0D5524DEBD7000ADF16C /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		49FBE4D724DD362B002B841F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +125,7 @@
 		490343EE24DD210D002FE48C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */,
+				4987515724DFE15F004EEA54 /* Home */,
 				49FBE4D924DD3630002B841F /* Login */,
 			);
 			path = View;
@@ -124,6 +134,7 @@
 		490343EF24DD2112002FE48C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4987515B24DFE67B004EEA54 /* image */,
 				49FBE4DE24DD39F3002B841F /* Login */,
 			);
 			path = Model;
@@ -172,6 +183,33 @@
 			path = SupportFile;
 			sourceTree = "<group>";
 		};
+		4987515724DFE15F004EEA54 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0FACC99F24DE9F9600DD7708 /* FloatingButton.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4987515824DFE2F8004EEA54 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				4987515924DFE31A004EEA54 /* SnsButton.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		4987515B24DFE67B004EEA54 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				4987515E24DFE76F004EEA54 /* apple_logo.png */,
+				4987515C24DFE76E004EEA54 /* google_logo.png */,
+				4987515D24DFE76F004EEA54 /* kakao_logo.png */,
+				4987515F24DFE76F004EEA54 /* naver_logo.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		49FBE4D624DD35F2002B841F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				49FBE4DA24DD3644002B841F /* LoginView.swift */,
+				4987515824DFE2F8004EEA54 /* Custom */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -277,6 +316,10 @@
 				4951AF3824D842C700CA8F76 /* LaunchScreen.storyboard in Resources */,
 				4951AF3524D842C700CA8F76 /* Assets.xcassets in Resources */,
 				4957E7D024D8457F00E20A20 /* GoogleService-Info.plist in Resources */,
+				4987516224DFE76F004EEA54 /* apple_logo.png in Resources */,
+				4987516024DFE76F004EEA54 /* google_logo.png in Resources */,
+				4987516124DFE76F004EEA54 /* kakao_logo.png in Resources */,
+				4987516324DFE76F004EEA54 /* naver_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +395,7 @@
 				49FBE4DB24DD3644002B841F /* LoginView.swift in Sources */,
 				49FBE4D824DD362B002B841F /* LoginViewController.swift in Sources */,
 				4951AF2C24D842C600CA8F76 /* AppDelegate.swift in Sources */,
+				4987515A24DFE31A004EEA54 /* SnsButton.swift in Sources */,
 				0FDA125124DD38E5004B7D4B /* GuideViewController.swift in Sources */,
 				0FDA124924DD35BC004B7D4B /* HomeViewController.swift in Sources */,
 				0FDA124D24DD37CC004B7D4B /* MainTabBarController.swift in Sources */,
@@ -493,7 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JejuECS/JejuECS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 25WA95NQNW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -583,7 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JejuECS/JejuECS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 25WA95NQNW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

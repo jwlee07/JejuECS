@@ -8,6 +8,11 @@
 
 import UIKit
 import SnapKit
+import Firebase
+
+protocol LoginViewDelegate {
+  func loginData(id: String, pw: String)
+}
 
 class LoginView: UIView {
   // MARK: - Property
@@ -46,6 +51,7 @@ class LoginView: UIView {
     btn.backgroundColor = .systemGray
     btn.layer.cornerRadius = 10
     btn.clipsToBounds = true
+    btn.addTarget(self, action: #selector(didTabLoginButton), for: .touchUpInside)
     return btn
   }()
   
@@ -69,6 +75,9 @@ class LoginView: UIView {
     return view
   }()
   
+  var delegate: LoginViewDelegate?
+  
+  
   // MARK: - Init View
   
   override init(frame: CGRect) {
@@ -90,7 +99,8 @@ class LoginView: UIView {
   
   private func setConstraints() {
     
-    let loginHeight: CGFloat = 60
+    let loginHeight: CGFloat = 40
+    
     let padding: CGFloat = 25
     
     let subViewWidth: CGFloat = 2
@@ -139,5 +149,38 @@ class LoginView: UIView {
       $0.bottom.equalTo(idSearchButton.snp.bottom)
       $0.leading.equalTo(idPwSearchSubView.snp.trailing).offset(padding)
     }
+  }
+  @objc private func didTabLoginButton() {
+    print ("didTabLoginButton")
+    
+//    guard let idText = idTextfield.text, idText.isEmpty else { return }
+//    guard let pwText = pwTextfield.text, idText.isEmpty else { return }
+    
+    let idText = idTextfield.text!
+    let pwText = pwTextfield.text!
+    print ("idText : ", idText)
+    print ("pwText : ", pwText)
+    
+    delegate?.loginData(id: idText, pw: pwText)
+    
+    //    let loginDB = Firestore.firestore()
+    //    loginDB.collection("userCheck").document("userList").setData([idText : pwText], completion: { err in
+    //      if let err = err {
+    //        print ("err : ", err.localizedDescription)
+    //      } else {
+    //        print ("db success")
+    //      }
+    //    })
+    //
+    //    var ref: DocumentReference? = nil
+    //    ref = loginDB.collection("userCheck").addDocument(data: [
+    //        idText: pwText
+    //    ]) { err in
+    //        if let err = err {
+    //          print("Error adding document: \(err.localizedDescription)")
+    //        } else {
+    //            print("Document added with ID: \(ref!.documentID)")
+    //        }
+    //    }
   }
 }

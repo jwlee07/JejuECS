@@ -20,16 +20,34 @@ class LoginViewController: UIViewController {
   
   private let loginView = LoginView()
   
-  private let authorizationAppleIDButton = ASAuthorizationAppleIDButton()
-  private let googleLoginButton = GIDSignInButton()
-  private let kakaoLoginButton = KOLoginButton()
+  private let authorizationAppleIDButton: SnsButton = {
+    let btn = SnsButton()
+    btn.setImage(UIImage(named: "apple_logo"), for: .normal)
+    btn.setTitle(" Apple로 로그인", for: .normal)
+    return btn
+  }()
+  
+  private let googleLoginButton: SnsButton = {
+    let btn = SnsButton()
+    btn.setImage(UIImage(named: "google_logo"), for: .normal)
+    btn.setTitle(" Google로 로그인", for: .normal)
+    btn.addTarget(self, action: #selector(setGoogleLogin), for: .touchUpInside)
+    return btn
+  }()
+  
+  private let kakaoLoginButton: SnsButton = {
+    let btn = SnsButton()
+    btn.setImage(UIImage(named: "kakao_logo"), for: .normal)
+    btn.setTitle(" 카카오로 로그인", for: .normal)
+    return btn
+  }()
+  
   private let naverLoginInstance = NaverThirdPartyLoginConnection.getSharedInstance()
   
-  private let naverLoginButton: UIButton = {
-    let btn = UIButton()
-    btn.setTitle("naver 로그인", for: .normal)
-    btn.titleLabel?.textAlignment = .center
-    btn.backgroundColor = .systemGreen
+  private let naverLoginButton: SnsButton = {
+    let btn = SnsButton()
+    btn.setImage(UIImage(named: "naver_logo"), for: .normal)
+    btn.setTitle(" 네이버로 로그인", for: .normal)
     return btn
   }()
   
@@ -39,7 +57,7 @@ class LoginViewController: UIViewController {
     let lb = UILabel()
     lb.text = "혹시, 제주ECS가 처음이신가요? "
     lb.textColor = .systemGray
-    lb.font = UIFont(name: "AppleSDGothicNeo-regular", size: 20)
+    lb.font = UIFont(name: "AppleSDGothicNeo-regular", size: 15)
     return lb
   }()
   
@@ -47,9 +65,11 @@ class LoginViewController: UIViewController {
     let btn = UIButton()
     btn.setTitle("회원가입", for: .normal)
     btn.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-    btn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
+    btn.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
     return btn
   }()
+  
+  var loginFirebaseDB = Firestore.firestore()
   
   // MARK: - LifeCycle
   
@@ -69,6 +89,7 @@ class LoginViewController: UIViewController {
   // MARK: - Setup Layout
   
   private func setUI() {
+    loginView.delegate = self
     [loginView,
      authorizationAppleIDButton,
      googleLoginButton,
@@ -86,18 +107,17 @@ class LoginViewController: UIViewController {
   
   private func setConstraints() {
     
-    let padding: CGFloat = 150
+    let padding: CGFloat = 100
     let margin: CGFloat = 25
-    let loginViewHeight: CGFloat = 200
+    let loginViewHeight: CGFloat = 150
     
     
-    let snsloginViewHeight: CGFloat = 50
-    let snsPadding: CGFloat = 250
+    let snsloginViewHeight: CGFloat = 40
     let snsToSnsPadding: CGFloat = 8
     
     let signUpViewHeight: CGFloat = 16
     let signUpPadding: CGFloat = 20
-    let signUpMargin: CGFloat = 45
+    let signUpMargin: CGFloat = 70
     
     [loginView,
      authorizationAppleIDButton,
@@ -111,35 +131,36 @@ class LoginViewController: UIViewController {
     }
     
     loginView.snp.makeConstraints {
-      $0.top.equalTo(padding)
+      $0.top.equalTo(view.safeAreaLayoutGuide).offset(padding)
       $0.height.equalTo(loginViewHeight)
     }
     
-    authorizationAppleIDButton.snp.makeConstraints {
-      $0.top.equalTo(loginView.snp.bottom).offset(snsPadding)
-      $0.height.equalTo(snsloginViewHeight)
-    }
-    
     googleLoginButton.snp.makeConstraints {
-      $0.top.equalTo(authorizationAppleIDButton.snp.bottom).offset(snsToSnsPadding)
-      $0.height.equalTo(snsloginViewHeight)
-    }
-    
-    kakaoLoginButton.snp.makeConstraints {
-      $0.top.equalTo(googleLoginButton.snp.bottom).offset(snsToSnsPadding)
+      $0.bottom.equalTo(naverLoginButton.snp.top).offset(-snsToSnsPadding)
       $0.height.equalTo(snsloginViewHeight)
     }
     
     naverLoginButton.snp.makeConstraints {
-      $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(snsToSnsPadding)
+      $0.bottom.equalTo(kakaoLoginButton.snp.top).offset(-snsToSnsPadding)
+      $0.height.equalTo(snsloginViewHeight)
+    }
+    
+    kakaoLoginButton.snp.makeConstraints {
+      $0.bottom.equalTo(authorizationAppleIDButton.snp.top).offset(-snsToSnsPadding)
+      $0.height.equalTo(snsloginViewHeight)
+    }
+    
+    authorizationAppleIDButton.snp.makeConstraints {
+      $0.bottom.equalTo(signUpView.snp.top).offset(-signUpPadding)
       $0.height.equalTo(snsloginViewHeight)
     }
     
     signUpView.snp.makeConstraints {
       $0.leading.equalTo(signUpMargin)
       $0.trailing.equalTo(-signUpMargin)
-      $0.top.equalTo(naverLoginButton.snp.bottom).offset(signUpPadding)
       $0.height.equalTo(signUpViewHeight)
+      $0.centerX.equalToSuperview()
+      $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-signUpPadding)
     }
     
     signUpLabel.snp.makeConstraints {
@@ -171,7 +192,7 @@ class LoginViewController: UIViewController {
   
   // MARK: - Set GoogleLoginButton
   
-  private func setGoogleLogin() {
+  @objc private func setGoogleLogin() {
     GIDSignIn.sharedInstance()?.presentingViewController = self
     GIDSignIn.sharedInstance().signIn()
   }
@@ -185,25 +206,35 @@ class LoginViewController: UIViewController {
   @objc private func didTapKakaoButton(_ sender: Any) {
     guard let session = KOSession.shared() else { return }
     
+    
     if session.isOpen() {
       session.close()
     }
     
     session.open { (error) in
       if error != nil || !session.isOpen() { return }
+      let loginDB = Firestore.firestore()
       KOSessionTask.userMeTask(completion: { (error, user) in
         if let error = error {
           print ("kakao error : ", error.localizedDescription)
         }
-        //        guard let user = user,
-        //          let email = user.account?.email,
-        //          let nickname = user.nickname else { return }
+        guard let user = user,
+          let kakaoEmail = user.account?.email else { return }
+//          let nickname = user.nickname else { return }
         
-        //      let mainVC = MainViewController()
-        //      mainVC.emailLabel.text = email
-        //      mainVC.nicnameLabel.text = nickname
+        var ref: DocumentReference? = nil
+        ref = loginDB.collection("kakaoLogin").addDocument(data: [
+          "email" : kakaoEmail
+//          "nickName" : nickname
+        ]) { err in
+          if let err = err {
+            print("Error adding document: \(err.localizedDescription)")
+          } else {
+            print("Document added with ID: \(ref!.documentID)")
+          }
+        }
         
-        //      self.present(mainVC, animated: false, completion: nil)
+        
       })
     }
   }
@@ -285,5 +316,22 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
   // 모든 Error
   func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
     print("[Error] :", error.localizedDescription)
+  }
+}
+// MARK: - Login Delegate
+
+extension LoginViewController: LoginViewDelegate {
+  func loginData(id: String, pw: String) {
+    let loginDB = Firestore.firestore()
+    var ref: DocumentReference? = nil
+    ref = loginDB.collection("userCheck").addDocument(data: [
+      id: pw
+    ]) { err in
+      if let err = err {
+        print("Error adding document: \(err.localizedDescription)")
+      } else {
+        print("Document added with ID: \(ref!.documentID)")
+      }
+    }
   }
 }

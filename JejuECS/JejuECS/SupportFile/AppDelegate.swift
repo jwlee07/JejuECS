@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     instance?.appName = kServiceAppName
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = MainTabBarController()
     window?.makeKeyAndVisible()
     window?.rootViewController = LoginViewController()
     window?.backgroundColor = .systemBackground
@@ -78,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 // MARK: - GIDSignInDelegate
+
 extension AppDelegate: GIDSignInDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     if let error = error {
