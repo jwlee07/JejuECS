@@ -86,17 +86,6 @@ extension AppDelegate: GIDSignInDelegate {
     }
     
     guard let authentication = user.authentication else { return }
-    let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                   accessToken: authentication.accessToken)
-    
-    Auth.auth().signIn(with: credential) { (authResult, error) in
-      if let error = error {
-        print ("Auth error.localizedDescription : ", error.localizedDescription)
-      } else {
-        print ("Login Success")
-      }
-    }
-    print ("didSignInFor credential.provider : ", credential.provider)
   }
 }
 
